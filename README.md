@@ -53,37 +53,11 @@ A compact Xception-style convolutional backbone feeding six parallel composition
 ├── inference.py                # load model, predict composition on new patches
 └── README.md
 ```
-*(adjust to match your actual repo layout)*
-
----
-
-## Usage
-
-```python
-import keras
-
-model = keras.saving.load_model("fabricnet_best_fold_3.keras")
-
-# patch: numpy array, shape (1, 120, 120, 3), pixel values normalized as in training
-predictions = model.predict(patch)
-# predictions -> list of 6 arrays, each shape (1, 1): composition fraction per fiber type
-```
-
-*(fill in your actual preprocessing/normalization steps — this matters for correct inference)*
-
----
 
 ## Status
 
 Model trained and evaluated; current best checkpoint (fold 3) achieves 87% accuracy on the custom dataset, exceeding the original FabricNet paper's 84%.
 
-## Roadmap
-
-- [ ] *(e.g. patch-to-garment aggregation)*
-- [ ] *(e.g. expand fiber type coverage)*
-- [ ] *(e.g. deployment / inference API)*
-
----
 
 ## Reference
 
